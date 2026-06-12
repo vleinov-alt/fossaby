@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кейсы Fossa-IT — автоматизация и разработка с измеримым результатом</title>
+<meta name="description" content="Кейсы Fossa-IT: автоматизация заявок, онлайн-запись, учётные системы, мобильные приложения. Реальные метрики результата.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt="Логотип Fossa-IT"><span>Fossa-IT</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true"><span data-en="Services">Услуги</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="automation.html"><strong data-en="Process automation">Автоматизация</strong><span data-en="ITSM, CRM, workflow apps, support">ITSM, CRM, workflow-приложения, поддержка</span></a></li>
+          <li><a href="development.html"><strong data-en="Websites and apps">Разработка сайтов и приложений</strong><span data-en="Websites, portals, bots — turnkey">Сайты, кабинеты, боты — под ключ</span></a></li>
+          <li><a href="fossamed.html"><strong>FossaMed</strong><span data-en="Medical information system for clinics">МИС для частных клиник</span></a></li>
+        </ul>
+      </li>
+      <li><a href="cases.html" aria-current="page" data-en="Cases">Кейсы</a></li>
+      <li><a href="contacts.html" data-en="Contacts">Контакты</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <button class="lang-toggle" type="button">EN</button>
+    <a class="btn btn-sm header-cta" href="contacts.html" data-en="Contact us">Связаться</a>
+    <button class="nav-burger" type="button" aria-label="Меню" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+  </div>
+</header>
+<main data-screen-label="Кейсы">
+
+  <section class="hero" style="padding-bottom:40px;" aria-labelledby="h1">
+    <svg class="lobes" style="top:-140px;right:-120px;width:520px;height:520px;opacity:.5;" viewBox="0 0 520 520" fill="none" aria-hidden="true">
+      <circle cx="340" cy="150" r="115" fill="#EAF5DF"></circle>
+      <circle cx="455" cy="255" r="90" fill="#F4F7F1"></circle>
+    </svg>
+    <div class="wrap">
+      <nav class="crumbs rv" aria-label="Хлебные крошки"><a href="index.html" data-en="Home">Главная</a><span class="sep">/</span><span data-en="Cases">Кейсы</span></nav>
+      <h1 class="h-hero rv d1" id="h1" style="margin-top:22px;" data-en="Cases">Кейсы</h1>
+      <p class="lead rv d2" data-en="Projects with results we can measure: fewer calls, fewer lost requests, faster processes.">Проекты с результатом, который можно измерить: меньше звонков, меньше потерянных заявок, быстрее процессы.</p>
+      <div class="tag-row rv d3" style="margin-top:32px;" role="group" aria-label="Фильтр по отрасли">
+        <button class="btn btn-sm case-filter" type="button" data-filter="all" data-en="All">Все</button>
+        <button class="btn btn-sm case-filter btn-ghost" type="button" data-filter="auto" data-en="Auto service">Автосервис</button>
+        <button class="btn btn-sm case-filter btn-ghost" type="button" data-filter="fitness" data-en="Fitness">Фитнес</button>
+        <button class="btn btn-sm case-filter btn-ghost" type="button" data-filter="beauty" data-en="Beauty">Красота</button>
+        <button class="btn btn-sm case-filter btn-ghost" type="button" data-filter="horeca" data-en="HoReCa">HoReCa</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px;" aria-label="Список кейсов">
+    <div class="wrap">
+      <div class="grid grid-2" id="caseGrid">
+        <a class="card case-card rv" data-industry="fitness" href="case-gym.html">
+          <div class="case-cover cover-a">
+            <span class="cover-lobe" style="width:160px;height:160px;top:-50px;right:-30px;"></span><span class="cover-lobe" style="width:90px;height:90px;bottom:-20px;right:90px;opacity:.15;"></span>
+            <span class="tag">Фитнес-клуб</span>
+          </div>
+          <div class="case-body">
+            <h3 data-en="Member app and CRM for the FITLINE gym chain">Приложение и CRM для сети фитнес-клубов FITLINE</h3>
+            <p data-en="A three-club chain in Minsk offloaded its front desk and moved membership renewals into an app.">Сеть из трёх клубов в Минске разгрузила ресепшн и перевела продления абонементов в приложение.</p>
+            <div class="case-metrics">
+              <div class="metric"><b>−40%</b><span data-en="front-desk calls">звонков на ресепшн</span></div>
+              <div class="metric"><b>70%</b><span data-en="renewals online">продлений онлайн</span></div>
+              <div class="metric"><b>4 нед</b><span data-en="to the first release">до первого релиза</span></div>
+            </div>
+          </div>
+        </a>
+        <a class="card case-card rv d1" data-industry="auto" href="case-auto-service.html">
+          <div class="case-cover cover-b">
+            <span class="cover-lobe" style="width:140px;height:140px;top:-40px;left:-30px;opacity:.12;"></span><span class="cover-lobe" style="width:80px;height:80px;bottom:-25px;right:30px;opacity:.18;background:#68B42D;"></span>
+            <span class="tag">Автосервис</span>
+          </div>
+          <div class="case-body">
+            <h3 data-en="Request intake and SLA for the AvtoDom service chain">Заявки и SLA для сети автосервисов АвтоДом</h3>
+            <p data-en="Four service stations merged requests from phone, Viber and the website into one queue with deadlines and statuses.">Четыре СТО свели заявки из телефона, Viber и сайта в одну очередь со сроками и статусами.</p>
+            <div class="case-metrics">
+              <div class="metric"><b>2 мин</b><span data-en="to process a request, was 25">обработка заявки, было 25</span></div>
+              <div class="metric"><b>0</b><span data-en="lost requests">потерянных заявок</span></div>
+              <div class="metric"><b>+28%</b><span data-en="repeat visits">повторных визитов</span></div>
+            </div>
+          </div>
+        </a>
+        <a class="card case-card rv" data-industry="beauty" href="case-beauty-salon.html">
+          <div class="case-cover cover-d">
+            <span class="cover-lobe" style="width:150px;height:150px;top:-55px;right:-40px;opacity:.2;"></span><span class="cover-lobe" style="width:70px;height:70px;bottom:-15px;left:40px;opacity:.15;"></span>
+            <span class="tag">Салон красоты</span>
+          </div>
+          <div class="case-body">
+            <h3 data-en="Online booking and CRM for the BellaVita salon chain">Онлайн-запись и CRM для сети салонов BellaVita</h3>
+            <p data-en="Five salons moved two thirds of bookings online and cut no-shows by almost a third.">Пять салонов перевели две трети записей в онлайн и почти на треть сократили неявки.</p>
+            <div class="case-metrics">
+              <div class="metric"><b>65%</b><span data-en="bookings online">записей онлайн</span></div>
+              <div class="metric"><b>−30%</b><span data-en="client no-shows">неявок клиентов</span></div>
+              <div class="metric"><b>3 мес</b><span data-en="project payback">окупаемость проекта</span></div>
+            </div>
+          </div>
+        </a>
+        <a class="card case-card rv d1" data-industry="horeca" href="case-restaurant.html">
+          <div class="case-cover cover-c">
+            <span class="cover-lobe" style="width:130px;height:130px;top:-45px;right:-25px;opacity:.2;"></span><span class="cover-lobe" style="width:70px;height:70px;bottom:-20px;left:30px;opacity:.18;"></span>
+            <span class="tag">Ресторан</span>
+          </div>
+          <div class="case-body">
+            <h3 data-en="Inventory system and Telegram bot for Villa Pasta">Учётная система и Telegram-бот для Villa Pasta</h3>
+            <p data-en="The restaurant left notebooks and Excel behind: stock, write-offs and purchase requests live in a simple system and a bot.">Ресторан ушёл от тетрадей и Excel: склад, списания и заявки на закупку — в простой системе и боте.</p>
+            <div class="case-metrics">
+              <div class="metric"><b>1 час</b><span data-en="inventory check, was a day">инвентаризация, был день</span></div>
+              <div class="metric"><b>−18%</b><span data-en="food write-offs">списаний продуктов</span></div>
+              <div class="metric"><b>6 нед</b><span data-en="to launch">до запуска</span></div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <p class="rv" style="margin-top:36px;font-size:14.5px;color:var(--mut-2);" data-en="Metrics are provided by clients based on 3–6 months after launch.">Метрики предоставлены клиентами по итогам 3–6 месяцев после запуска.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;" aria-label="Связаться">
+    <div class="wrap">
+      <div class="dark convert rv" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;">
+        <div style="max-width:540px;">
+          <h2 data-en="A similar task?">Похожая задача?</h2>
+          <p class="lead" style="margin-top:12px;" data-en="Tell us about it — we'll show how a comparable project would work for you.">Расскажите о ней — покажем, как сопоставимый проект будет выглядеть у вас.</p>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <a class="btn" href="contacts.html" data-en="Contact us">Связаться</a>
+          <a class="btn btn-ghost on-dark" href="https://t.me/FossaIT?utm_source=site&amp;utm_medium=cta&amp;utm_campaign=cases" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/logo-mark-on-dark.svg" alt="" style="width:32px;height:32px;"><span>Fossa-IT</span></a>
+        <p style="max-width:30ch;line-height:1.6;" data-en="An IT partner at every stage: from the first website to process automation and support.">IT-партнёр на всех этапах: от первого сайта до автоматизации процессов и сопровождения.</p>
+      </div>
+      <div>
+        <h4 data-en="Services">Услуги</h4>
+        <ul>
+          <li><a href="automation.html" data-en="Process automation">Автоматизация процессов</a></li>
+          <li><a href="automation-itsm-crm.html">ITSM / CRM</a></li>
+          <li><a href="automation-custom.html" data-en="Workflow apps">Workflow-приложения</a></li>
+          <li><a href="development.html" data-en="Websites and apps">Сайты и приложения</a></li>
+          <li><a href="fossamed.html">FossaMed</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Company">Компания</h4>
+        <ul>
+          <li><a href="cases.html" data-en="Cases">Кейсы</a></li>
+          <li><a href="contacts.html" data-en="Contacts">Контакты</a></li>
+          <li><a href="fossamed-security.html" data-en="FossaMed security">Безопасность FossaMed</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Contacts">Контакты</h4>
+        <ul>
+          <li><a href="tel:+375256509716">+375 25 650-97-16</a></li>
+          <li><a href="tel:+79626958003">+7 962 695-80-03</a></li>
+          <li><a href="mailto:it@fossa.by">it@fossa.by</a></li>
+          <li><a href="https://t.me/FossaIT?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=all" target="_blank" rel="noopener">Telegram: @FossaIT</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> ООО «Фосса АйТи» · <span data-en="Minsk, Belarus">Минск, Беларусь</span></span>
+      <span><a href="privacy-policy.html" data-en="Privacy policy">Политика конфиденциальности</a> · <a href="terms.html" data-en="Terms of use">Условия использования</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var btns = document.querySelectorAll('.case-filter');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.add('btn-ghost'); });
+      b.classList.remove('btn-ghost');
+      var f = b.dataset.filter;
+      document.querySelectorAll('#caseGrid [data-industry]').forEach(function(card){
+        card.style.display = (f === 'all' || card.dataset.industry === f) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+<script src="site.js"></script>
+</body>
+</html>

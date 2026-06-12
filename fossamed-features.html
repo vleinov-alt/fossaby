@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Возможности FossaMed — онлайн-запись, приём по МКБ-10, история пациента</title>
+<meta name="description" content="Возможности МИС FossaMed подробно: онлайн-запись, ведение приёма с МКБ-10, единая история пациента, документы и ролевой доступ.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><img src="assets/logo-mark.svg" alt="Логотип Fossa-IT"><span>Fossa-IT</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-drop">
+        <button class="nav-drop-btn" type="button" aria-expanded="false" aria-haspopup="true"><span data-en="Services">Услуги</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button>
+        <ul class="nav-drop-menu">
+          <li><a href="automation.html"><strong data-en="Process automation">Автоматизация</strong><span data-en="ITSM, CRM, workflow apps, support">ITSM, CRM, workflow-приложения, поддержка</span></a></li>
+          <li><a href="development.html"><strong data-en="Websites and apps">Разработка сайтов и приложений</strong><span data-en="Websites, portals, bots — turnkey">Сайты, кабинеты, боты — под ключ</span></a></li>
+          <li><a href="fossamed.html" aria-current="page"><strong>FossaMed</strong><span data-en="Medical information system for clinics">МИС для частных клиник</span></a></li>
+        </ul>
+      </li>
+      <li><a href="cases.html" data-en="Cases">Кейсы</a></li>
+      <li><a href="contacts.html" data-en="Contacts">Контакты</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <button class="lang-toggle" type="button">EN</button>
+    <a class="btn btn-med btn-sm header-cta" href="fossamed-demo.html" data-en="Get a demo">Получить демо</a>
+    <button class="nav-burger" type="button" aria-label="Меню" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+  </div>
+</header>
+<main data-screen-label="FossaMed: возможности">
+
+  <section class="hero" style="background:linear-gradient(180deg,#F3F9F7 0%,#fff 90%);padding-bottom:40px;" aria-labelledby="h1">
+    <div class="wrap">
+      <nav class="crumbs rv" aria-label="Хлебные крошки"><a href="index.html" data-en="Home">Главная</a><span class="sep">/</span><a href="fossamed.html">FossaMed</a><span class="sep">/</span><span data-en="Features">Возможности</span></nav>
+      <h1 class="h-xl rv d1" id="h1" style="margin-top:22px;" data-en="FossaMed features">Возможности FossaMed</h1>
+      <p class="lead rv d2" data-en="Four modules that cover a clinic's daily work: booking, appointments, patient history and documents.">Четыре модуля, которые закрывают ежедневную работу клиники: запись, приём, история пациента и документы.</p>
+      <div class="tag-row rv d3" style="margin-top:28px;">
+        <a class="tag med" href="#booking" data-en="Online booking">Онлайн-запись</a>
+        <a class="tag med" href="#appointment" data-en="Appointments (ICD-10)">Приём (МКБ-10)</a>
+        <a class="tag med" href="#history" data-en="Patient history">История пациента</a>
+        <a class="tag med" href="#documents" data-en="Documents and roles">Документы и роли</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="booking" aria-labelledby="booking-h">
+    <div class="wrap split" style="align-items:center;">
+      <div class="rv">
+        <p class="eyebrow med" data-en="Online booking">Онлайн-запись</p>
+        <h2 id="booking-h" style="margin-top:14px;" data-en="Booking without calls — from the website, the bot, the front desk">Запись без звонков — с сайта, из бота, с ресепшн</h2>
+        <p class="lead" style="margin-top:14px;" data-en="The patient picks the doctor and time; the front desk sees one calendar across branches. Confirmations and reminders go out automatically — by SMS or Telegram.">Пациент выбирает врача и время сам; регистратура видит один календарь по всем филиалам. Подтверждения и напоминания уходят автоматически — в СМС или Telegram.</p>
+        <ul class="checks med">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="One calendar — no double bookings">Один календарь — никаких двойных записей</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="Reminders reduce no-shows">Напоминания снижают неявки</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="Bot, website and phone bookings in one place">Запись из бота, сайта и по телефону — в одном месте</span></li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">app.fossamed.by/schedule</span></div><div class="mis" style="height:250px;" aria-hidden="true"><div class="mis-side"><div class="mis-logo"><i></i>FossaMed</div><div class="mis-nav act"><i></i>Расписание</div><div class="mis-nav"><i></i>Пациенты</div><div class="mis-nav"><i></i>Приёмы</div><div class="mis-nav"><i></i>Документы</div><div class="mis-nav"><i></i>Отчёты</div></div><div class="mis-main">
+      <div class="mis-top"><div><div class="mis-h">Расписание · Иванова О. А.</div><div class="mis-mut">Пятница, 12 июня</div></div><span class="mis-btn">+ Новая запись</span></div>
+      <div class="mis-card" style="padding:8px 10px;display:flex;gap:6px;flex-wrap:wrap;">
+        <span class="mis-pill gray">09:00</span><span class="mis-pill gray">09:30</span><span class="mis-pill" style="background:var(--med);color:#fff;">10:00 · выбрано</span><span class="mis-pill gray">10:30</span><span class="mis-pill warn">11:00 · занято</span><span class="mis-pill gray">11:30</span><span class="mis-pill gray">12:00</span>
+      </div>
+      <div class="mis-card" style="padding:0;">
+        <div class="mis-row"><span class="mis-ava" style="background:#12937B;">ЕК</span><div style="flex:1;"><b>Ковалёва Елена</b><div class="mis-mut">+375 25 ··· ·· ··</div></div><span class="mis-pill">СМС отправлено</span></div>
+        <div class="mis-row"><span class="mis-ava" style="background:#4A7DBF;">ДС</span><div style="flex:1;"><b>Соколов Дмитрий</b><div class="mis-mut">Запись из Telegram-бота</div></div><span class="mis-pill warn">Ожидает</span></div>
+      </div>
+    </div></div></div>
+        <p class="mono" style="font-size:11px;color:var(--mut-2);margin-top:12px;text-align:center;" data-en="Interface mock. TODO: replace with a real product screenshot">Мок интерфейса. TODO: заменить на реальный скриншот продукта</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="appointment" aria-labelledby="appointment-h">
+    <div class="wrap split" style="align-items:center;">
+      <div class="rv" style="order:2;">
+        <p class="eyebrow med" data-en="Appointment workflow">Ведение приёма</p>
+        <h2 id="appointment-h" style="margin-top:14px;" data-en="An appointment protocol with ICD-10 — faster than by hand">Протокол приёма с МКБ-10 — быстрее, чем от руки</h2>
+        <p class="lead" style="margin-top:14px;" data-en="The doctor fills a specialty-based protocol template, picks diagnoses from the ICD-10 directory and prints the report in one click. Prescriptions land in the patient card immediately.">Врач заполняет протокол по шаблону своей специальности, выбирает диагнозы из справочника МКБ-10 и печатает заключение в один клик. Назначения сразу попадают в карту пациента.</p>
+        <ul class="checks med">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="Protocol templates per specialty">Шаблоны протоколов по специальностям</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="ICD-10 directory with built-in search">Справочник МКБ-10 со встроенным поиском</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="One-click printing of reports and prescriptions">Печать заключения и назначений в один клик</span></li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">app.fossamed.by/visit/4812</span></div><div class="mis" style="height:250px;" aria-hidden="true"><div class="mis-side"><div class="mis-logo"><i></i>FossaMed</div><div class="mis-nav"><i></i>Расписание</div><div class="mis-nav"><i></i>Пациенты</div><div class="mis-nav act"><i></i>Приёмы</div><div class="mis-nav"><i></i>Документы</div><div class="mis-nav"><i></i>Отчёты</div></div><div class="mis-main">
+      <div class="mis-top"><div><div class="mis-h">Приём · Ковалёва Елена</div><div class="mis-mut">Терапевт · 12 июня, 10:00</div></div><span class="mis-btn ghost">Печать</span></div>
+      <div class="mis-card">
+        <div class="mis-mut" style="margin-bottom:5px;">Диагноз (МКБ-10)</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;"><span class="mis-pill" style="background:#EAF0FA;color:#3A5E8C;">J06.9 · ОРВИ</span><span class="mis-pill gray">+ добавить код</span></div>
+      </div>
+      <div class="mis-card">
+        <div class="mis-mut" style="margin-bottom:6px;">Жалобы и анамнез</div>
+        <div class="mis-line" style="width:92%;"></div><div class="mis-line" style="width:74%;margin-top:5px;"></div><div class="mis-line" style="width:83%;margin-top:5px;"></div>
+      </div>
+      <div class="mis-card" style="display:flex;justify-content:space-between;align-items:center;">
+        <span class="mis-mut">Назначения · 2 позиции</span><span class="mis-btn">Завершить приём</span>
+      </div>
+    </div></div></div>
+        <p class="mono" style="font-size:11px;color:var(--mut-2);margin-top:12px;text-align:center;" data-en="Interface mock. TODO: replace with a real product screenshot">Мок интерфейса. TODO: заменить на реальный скриншот продукта</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="history" aria-labelledby="history-h">
+    <div class="wrap split" style="align-items:center;">
+      <div class="rv">
+        <p class="eyebrow med" data-en="Patient history">История пациента</p>
+        <h2 id="history-h" style="margin-top:14px;" data-en="One patient card for the whole clinic">Одна карта пациента на всю клинику</h2>
+        <p class="lead" style="margin-top:14px;" data-en="Visits, diagnoses, analyses and files live in one card — regardless of branch or doctor. A new specialist sees the full picture in a minute instead of digging through paper folders.">Визиты, диагнозы, анализы и файлы хранятся в одной карте — независимо от филиала и врача. Новый специалист видит полную картину за минуту, а не собирает её по бумажным папкам.</p>
+        <ul class="checks med">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="A complete timeline of visits and prescriptions">Полная хронология визитов и назначений</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="Imaging and lab files attach to the card">Файлы исследований прикрепляются к карте</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="Patient search in seconds">Поиск по пациентам за секунды</span></li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">app.fossamed.by/patient/2304</span></div><div class="mis" style="height:250px;" aria-hidden="true"><div class="mis-side"><div class="mis-logo"><i></i>FossaMed</div><div class="mis-nav"><i></i>Расписание</div><div class="mis-nav act"><i></i>Пациенты</div><div class="mis-nav"><i></i>Приёмы</div><div class="mis-nav"><i></i>Документы</div><div class="mis-nav"><i></i>Отчёты</div></div><div class="mis-main">
+      <div class="mis-top"><div style="display:flex;gap:8px;align-items:center;"><span class="mis-ava" style="background:#12937B;width:24px;height:24px;font-size:9px;">ЕК</span><div><div class="mis-h">Ковалёва Елена Андреевна</div><div class="mis-mut">1986 г. р. · карта №2304 · ДМС</div></div></div><span class="mis-btn ghost">Документы</span></div>
+      <div class="mis-card" style="padding:0;">
+        <div class="mis-row"><span class="mono" style="font-size:9px;color:#7C857F;">12.06.26</span><div style="flex:1;"><b>Приём терапевта</b><div class="mis-mut">J06.9 · Иванова О. А.</div></div><span class="mis-pill">Протокол</span></div>
+        <div class="mis-row"><span class="mono" style="font-size:9px;color:#7C857F;">28.05.26</span><div style="flex:1;"><b>Общий анализ крови</b><div class="mis-mut">Лаборатория · норма</div></div><span class="mis-pill gray">PDF</span></div>
+        <div class="mis-row"><span class="mono" style="font-size:9px;color:#7C857F;">14.03.26</span><div style="flex:1;"><b>УЗИ щитовидной железы</b><div class="mis-mut">Кузнецова Т. И.</div></div><span class="mis-pill gray">Файл</span></div>
+        <div class="mis-row"><span class="mono" style="font-size:9px;color:#7C857F;">02.11.25</span><div style="flex:1;"><b>Приём кардиолога</b><div class="mis-mut">I10 · Петров В. Н.</div></div><span class="mis-pill">Протокол</span></div>
+      </div>
+    </div></div></div>
+        <p class="mono" style="font-size:11px;color:var(--mut-2);margin-top:12px;text-align:center;" data-en="Interface mock. TODO: replace with a real product screenshot">Мок интерфейса. TODO: заменить на реальный скриншот продукта</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="documents" aria-labelledby="documents-h">
+    <div class="wrap split" style="align-items:center;">
+      <div class="rv" style="order:2;">
+        <p class="eyebrow med" data-en="Documents and roles">Документы и роли</p>
+        <h2 id="documents-h" style="margin-top:14px;" data-en="Templated documents, role-based access">Документы по шаблонам, доступ — по ролям</h2>
+        <p class="lead" style="margin-top:14px;" data-en="Contracts, consents and reports are generated from templates with patient data. The receptionist, doctor and owner see different sections — every action is logged.">Договоры, согласия и заключения формируются из шаблонов с данными пациента. Регистратор, врач и владелец видят разные разделы — каждое действие фиксируется в журнале.</p>
+        <ul class="checks med">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="Contract and consent templates with auto-fill">Шаблоны договоров и согласий с автоподстановкой</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="Roles: receptionist, doctor, chief physician, owner">Роли: регистратор, врач, главврач, владелец</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span data-en="An action log for incident investigation">Журнал действий для разбора инцидентов</span></li>
+        </ul>
+      </div>
+      <div class="rv d1">
+        <div class="browser"><div class="browser-bar"><i></i><i></i><i></i><span class="browser-url">app.fossamed.by/documents</span></div><div class="mis" style="height:250px;" aria-hidden="true"><div class="mis-side"><div class="mis-logo"><i></i>FossaMed</div><div class="mis-nav"><i></i>Расписание</div><div class="mis-nav"><i></i>Пациенты</div><div class="mis-nav"><i></i>Приёмы</div><div class="mis-nav act"><i></i>Документы</div><div class="mis-nav"><i></i>Отчёты</div></div><div class="mis-main">
+      <div class="mis-top"><div><div class="mis-h">Шаблоны документов</div><div class="mis-mut">Роль: администратор клиники</div></div><span class="mis-btn">+ Шаблон</span></div>
+      <div class="mis-card" style="padding:0;">
+        <div class="mis-row"><div style="flex:1;"><b>Договор оказания платных услуг</b><div class="mis-mut">Обновлён 02.06.2026</div></div><span class="mis-pill gray">Регистратор</span></div>
+        <div class="mis-row"><div style="flex:1;"><b>Согласие на обработку перс. данных</b><div class="mis-mut">Обновлён 02.06.2026</div></div><span class="mis-pill gray">Регистратор</span></div>
+        <div class="mis-row"><div style="flex:1;"><b>Протокол приёма · терапия</b><div class="mis-mut">Обновлён 14.05.2026</div></div><span class="mis-pill">Врач</span></div>
+        <div class="mis-row"><div style="flex:1;"><b>Финансовый отчёт за месяц</b><div class="mis-mut">Формируется автоматически</div></div><span class="mis-pill warn">Владелец</span></div>
+      </div>
+    </div></div></div>
+        <p class="mono" style="font-size:11px;color:var(--mut-2);margin-top:12px;text-align:center;" data-en="Interface mock. TODO: replace with a real product screenshot">Мок интерфейса. TODO: заменить на реальный скриншот продукта</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;" aria-label="Демо">
+    <div class="wrap">
+      <div class="dark convert rv" style="background:#0F2E27;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px;">
+        <div style="max-width:560px;">
+          <h2 data-en="See it live on your clinic's scenarios">Посмотрите вживую на сценариях вашей клиники</h2>
+          <p class="lead" style="margin-top:12px;" data-en="A 45-minute demo plus two weeks of test access.">Демо на 45 минут плюс две недели тестового доступа.</p>
+        </div>
+        <a class="btn btn-med" href="fossamed-demo.html" data-en="Get a demo">Получить демо</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/logo-mark-on-dark.svg" alt="" style="width:32px;height:32px;"><span>Fossa-IT</span></a>
+        <p style="max-width:30ch;line-height:1.6;" data-en="An IT partner at every stage: from the first website to process automation and support.">IT-партнёр на всех этапах: от первого сайта до автоматизации процессов и сопровождения.</p>
+      </div>
+      <div>
+        <h4 data-en="Services">Услуги</h4>
+        <ul>
+          <li><a href="automation.html" data-en="Process automation">Автоматизация процессов</a></li>
+          <li><a href="automation-itsm-crm.html">ITSM / CRM</a></li>
+          <li><a href="automation-custom.html" data-en="Workflow apps">Workflow-приложения</a></li>
+          <li><a href="development.html" data-en="Websites and apps">Сайты и приложения</a></li>
+          <li><a href="fossamed.html">FossaMed</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Company">Компания</h4>
+        <ul>
+          <li><a href="cases.html" data-en="Cases">Кейсы</a></li>
+          <li><a href="contacts.html" data-en="Contacts">Контакты</a></li>
+          <li><a href="fossamed-security.html" data-en="FossaMed security">Безопасность FossaMed</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Contacts">Контакты</h4>
+        <ul>
+          <li><a href="tel:+375256509716">+375 25 650-97-16</a></li>
+          <li><a href="tel:+79626958003">+7 962 695-80-03</a></li>
+          <li><a href="mailto:it@fossa.by">it@fossa.by</a></li>
+          <li><a href="https://t.me/FossaIT?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=all" target="_blank" rel="noopener">Telegram: @FossaIT</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> ООО «Фосса АйТи» · <span data-en="Minsk, Belarus">Минск, Беларусь</span></span>
+      <span><a href="privacy-policy.html" data-en="Privacy policy">Политика конфиденциальности</a> · <a href="terms.html" data-en="Terms of use">Условия использования</a></span>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
