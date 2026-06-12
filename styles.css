@@ -78,8 +78,11 @@ h3{font-size:21px;letter-spacing:-.01em;}
   border-bottom:1px solid var(--line);
 }
 .nav{display:flex;align-items:center;gap:28px;height:72px;}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.02em;}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-.02em;white-space:nowrap;}
 .brand img{width:34px;height:34px;}
+.brand .brand-mark{width:34px;height:34px;flex:none;transition:transform .35s var(--ease);}
+.brand:hover .brand-mark{transform:rotate(-10deg) scale(1.07);}
+.brand .eye{transform-box:fill-box;transform-origin:center;}
 .brand .tld{color:var(--mut-2);font-weight:600;}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:12px;}
 .nav-links > li{position:relative;}
@@ -121,16 +124,16 @@ h3{font-size:21px;letter-spacing:-.01em;}
   transition:background .15s var(--ease),transform .15s var(--ease),border-color .15s var(--ease),color .15s var(--ease);
   text-align:center;
 }
-.btn:hover{background:#5AA322;}
-.btn:active{transform:translateY(1px);}
+.btn:hover{background:#5AA322;transform:translateY(-2px);box-shadow:0 8px 20px rgba(104,180,45,.35);}
+.btn:active{transform:translateY(1px);box-shadow:none;}
 .btn-dark{background:var(--ink);color:#fff;}
-.btn-dark:hover{background:var(--ink-2);}
+.btn-dark:hover{background:var(--ink-2);box-shadow:0 8px 20px rgba(16,20,24,.3);}
 .btn-ghost{background:none;border:1.5px solid var(--line-2);color:var(--ink);}
 .btn-ghost:hover{background:var(--soft);border-color:var(--ink);}
 .btn-ghost.on-dark{border-color:rgba(255,255,255,.28);color:#fff;}
 .btn-ghost.on-dark:hover{background:rgba(255,255,255,.08);border-color:#fff;}
 .btn-med{background:var(--med);color:#fff;}
-.btn-med:hover{background:var(--med-deep);}
+.btn-med:hover{background:var(--med-deep);box-shadow:0 8px 20px rgba(18,147,123,.35);}
 .btn-sm{padding:10px 18px;font-size:15px;border-radius:10px;}
 .btn svg{flex:none;}
 .link-arrow{display:inline-flex;align-items:center;gap:7px;font-weight:600;color:var(--acc-deep);font-size:16px;transition:gap .15s var(--ease);}
@@ -410,4 +413,32 @@ a.card:hover,.card.hov:hover{transform:translateY(-4px);box-shadow:var(--shadow)
   .nav-burger{display:flex;}
   .header-cta{display:none;}
   .case-metrics{flex-wrap:wrap;gap:14px;}
+}
+
+/* ---------- motion pass ---------- */
+.icon-chip{transition:transform .3s var(--ease),background .3s var(--ease);}
+.card:hover .icon-chip{transform:scale(1.1) rotate(-5deg);}
+.cover-lobe{transition:transform .6s var(--ease);}
+a.case-card:hover .cover-lobe{transform:scale(1.22);}
+.case-cover .tag{transition:transform .3s var(--ease);}
+a.case-card:hover .case-cover .tag{transform:translateY(-2px);}
+.step{transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);}
+.step:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-2);}
+.ladder-item{transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
+.ladder-item:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.brand img{transition:transform .35s var(--ease);}
+.brand:hover img{transform:rotate(-10deg) scale(1.07);}
+@media (prefers-reduced-motion:no-preference){
+  .lobes circle{animation:lobeFloat 9s ease-in-out infinite;}
+  .lobes circle:nth-child(2){animation-delay:-3s;animation-duration:12s;}
+  .lobes circle:nth-child(3){animation-delay:-6s;animation-duration:7.5s;}
+  @keyframes lobeFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-16px);}}
+}
+
+@media (prefers-reduced-motion:no-preference){
+  .brand .eye{animation:blink 5.5s infinite;}
+  @keyframes blink{0%,92%,96%,100%{transform:scaleY(1);}94%{transform:scaleY(.06);}}
+  .ladder-arrow svg{animation:nudge 2.4s var(--ease) infinite;}
+  @keyframes nudge{0%,100%{transform:translateX(0);opacity:.75;}50%{transform:translateX(7px);opacity:1;}}
+  @media (max-width:1020px){.ladder-arrow svg{animation-name:nudgeY;}@keyframes nudgeY{0%,100%{transform:translateX(0);}50%{transform:translateX(7px);}}}
 }

@@ -47,12 +47,44 @@
     });
   });
 
+  /* ---------- metric count-up ---------- */
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animateMetrics(scope) {
+    if (!scope.querySelectorAll) return;
+    scope.querySelectorAll('.metric b').forEach(function (b) {
+      if (b.dataset.counted) return;
+      b.dataset.counted = '1';
+      if (reduceMotion) return;
+      var node = b.firstChild;
+      if (!node || node.nodeType !== 3) return;
+      var full = node.nodeValue;
+      var m = full.match(/(-|\u2212)?(\d+)([.,]\d+)?/);
+      if (!m) return;
+      var target = parseFloat(m[2] + (m[3] || '').replace(',', '.'));
+      var decimals = m[3] ? m[3].length - 1 : 0;
+      var sep = (m[3] || '').charAt(0) || ',';
+      var start = null, dur = 900;
+      function frame(t) {
+        if (start === null) start = t;
+        var p = Math.min(1, (t - start) / dur);
+        p = 1 - Math.pow(1 - p, 3);
+        var val = (target * p).toFixed(decimals).replace('.', sep);
+        node.nodeValue = full.replace(m[0], (m[1] || '') + val);
+        if (p < 1) requestAnimationFrame(frame); else node.nodeValue = full;
+      }
+      requestAnimationFrame(frame);
+    });
+  }
+
   /* ---------- scroll reveal ---------- */
   document.documentElement.classList.add('js');
   var rvEls = Array.prototype.slice.call(document.querySelectorAll('.rv'));
   function rvCheck(instant) {
     if (!rvEls.length) return;
     var vh = window.innerHeight || document.documentElement.clientHeight;
+    if (vh < 10) { vh = 1e9; instant = true; } // viewport unknown (unsized iframe): reveal everything instantly
+    // before the user has scrolled, reveal without transition so content is never invisible
+    var noTransition = instant === true || (window.scrollY || window.pageYOffset || 0) === 0;
     var shown = [];
     rvEls = rvEls.filter(function (el) {
       var r = el.getBoundingClientRect();
@@ -60,23 +92,33 @@
       return true;
     });
     shown.forEach(function (el) {
-      if (instant === true) el.style.transition = 'none'; // show immediately, no transition on first paint
+      if (noTransition) el.style.transition = 'none';
       el.classList.add('in');
+      animateMetrics(el);
     });
-    if (instant === true && shown.length) {
+    if (noTransition && shown.length) {
       setTimeout(function () {
         shown.forEach(function (el) { el.style.transition = ''; });
       }, 60);
     }
   }
   rvCheck(true); // reveal everything already in the viewport immediately
-  document.addEventListener('scroll', rvCheck, { passive: true, capture: true });
-  window.addEventListener('resize', rvCheck, { passive: true });
-  window.addEventListener('load', rvCheck);
+  requestAnimationFrame(function () { rvCheck(true); }); // retry once layout/viewport settles
+  setTimeout(function () { rvCheck(true); }, 300);       // safety net for slow iframes
+  document.addEventListener('scroll', function () { rvCheck(false); }, { passive: true, capture: true });
+  window.addEventListener('resize', function () { rvCheck(false); }, { passive: true });
+  window.addEventListener('load', function () { rvCheck(true); });
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        if (en.isIntersecting) {
+          // transitions may never tick in frozen timelines; show instantly if page unscrolled
+          if ((window.scrollY || window.pageYOffset || 0) === 0) {
+            en.target.style.transition = 'none';
+            setTimeout(function () { en.target.style.transition = ''; }, 60);
+          }
+          en.target.classList.add('in'); animateMetrics(en.target); io.unobserve(en.target);
+        }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     rvEls.forEach(function (el) { io.observe(el); });
