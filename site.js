@@ -183,7 +183,7 @@
         .then(function (res) {
           return res.json().catch(function () { return {}; }).then(function (payload) {
             if (!res.ok || payload.status !== 'ok') {
-              throw new Error(payload.message || 'Не удалось отправить заявку');
+              throw new Error(payload.message || langText('Не удалось отправить заявку', 'Could not send the request'));
             }
             return payload;
           });
@@ -193,7 +193,10 @@
           window.fossaGoal(form.dataset.goal || 'form_submit');
         })
         .catch(function (err) {
-          error.textContent = err.message || 'Не удалось отправить заявку. Напишите нам в Telegram или на email.';
+          error.textContent = err.message || langText(
+            'Не удалось отправить заявку. Напишите нам в Telegram или на email.',
+            'Could not send the request. Please write to us on Telegram or by email.'
+          );
         })
         .finally(function () {
           form.classList.remove('sending');
@@ -217,9 +220,11 @@
     notice.className = 'cookie-notice';
     notice.setAttribute('role', 'dialog');
     notice.setAttribute('aria-label', 'Предупреждение о cookie');
+    notice.setAttribute('data-en-aria', 'Cookie notice');
 
     var text = document.createElement('p');
     text.innerHTML = 'Мы используем cookie для корректной работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy-policy.html">политикой конфиденциальности</a> и <a href="terms.html">условиями пользования</a>.';
+    text.setAttribute('data-en-html', 'We use cookies for correct site operation and analytics. By continuing to use the site, you agree to the <a href="privacy-policy.html">privacy policy</a> and <a href="terms.html">terms of use</a>.');
 
     var actions = document.createElement('div');
     actions.className = 'cookie-actions';
@@ -247,6 +252,10 @@
      Placeholders use data-en-ph. Preference persists in localStorage.     */
   function applyLang(lang) {
     document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en-html]').forEach(function (el) {
+      if (!el.dataset.ruHtml) el.dataset.ruHtml = el.innerHTML;
+      el.innerHTML = lang === 'en' ? el.dataset.enHtml : el.dataset.ruHtml;
+    });
     document.querySelectorAll('[data-en]').forEach(function (el) {
       if (!el.dataset.ru) el.dataset.ru = el.textContent;
       el.textContent = lang === 'en' ? el.dataset.en : el.dataset.ru;
@@ -255,10 +264,21 @@
       if (!el.dataset.ruPh) el.dataset.ruPh = el.getAttribute('placeholder') || '';
       el.setAttribute('placeholder', lang === 'en' ? el.dataset.enPh : el.dataset.ruPh);
     });
+    document.querySelectorAll('[data-en-aria]').forEach(function (el) {
+      if (!el.dataset.ruAria) el.dataset.ruAria = el.getAttribute('aria-label') || '';
+      el.setAttribute('aria-label', lang === 'en' ? el.dataset.enAria : el.dataset.ruAria);
+    });
+    document.querySelectorAll('[data-en-alt]').forEach(function (el) {
+      if (!el.dataset.ruAlt) el.dataset.ruAlt = el.getAttribute('alt') || '';
+      el.setAttribute('alt', lang === 'en' ? el.dataset.enAlt : el.dataset.ruAlt);
+    });
     document.querySelectorAll('.lang-toggle').forEach(function (b) {
       b.textContent = lang === 'en' ? 'RU' : 'EN';
       b.setAttribute('aria-label', lang === 'en' ? 'Переключить на русский' : 'Switch to English');
     });
+  }
+  function langText(ru, en) {
+    return document.documentElement.lang === 'en' ? en : ru;
   }
   var saved = 'ru';
   try { saved = localStorage.getItem('fossa-lang') || 'ru'; } catch (e) {}
