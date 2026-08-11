@@ -169,6 +169,41 @@
     });
   });
 
+  /* ---------- cookie notice ---------- */
+  function showCookieNotice() {
+    try {
+      if (localStorage.getItem('fossa-cookie-ok') === '1') return;
+    } catch (e) {}
+
+    var notice = document.createElement('div');
+    notice.className = 'cookie-notice';
+    notice.setAttribute('role', 'dialog');
+    notice.setAttribute('aria-label', 'Предупреждение о cookie');
+
+    var text = document.createElement('p');
+    text.innerHTML = 'Мы используем cookie для корректной работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="privacy-policy.html">политикой конфиденциальности</a> и <a href="terms.html">условиями пользования</a>.';
+
+    var actions = document.createElement('div');
+    actions.className = 'cookie-actions';
+
+    var accept = document.createElement('button');
+    accept.className = 'btn btn-sm';
+    accept.type = 'button';
+    accept.textContent = 'Понятно';
+    accept.setAttribute('data-en', 'Got it');
+    accept.addEventListener('click', function () {
+      try { localStorage.setItem('fossa-cookie-ok', '1'); } catch (e) {}
+      notice.classList.add('hide');
+      setTimeout(function () { notice.remove(); }, 220);
+    });
+
+    actions.appendChild(accept);
+    notice.appendChild(text);
+    notice.appendChild(actions);
+    document.body.appendChild(notice);
+  }
+  showCookieNotice();
+
   /* ---------- RU / EN toggle ----------
      Elements carry data-en="english text"; RU original is cached in data-ru.
      Placeholders use data-en-ph. Preference persists in localStorage.     */

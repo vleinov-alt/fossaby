@@ -36,7 +36,10 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:96px;
+}
 body{
   font-family:var(--font);
   font-size:17px;line-height:1.65;
@@ -69,6 +72,14 @@ h3{font-size:21px;letter-spacing:-.01em;}
 .eyebrow.med{color:var(--med);}
 .eyebrow.med::before{background:var(--med);}
 .mono{font-family:var(--mono);}
+.legal-content h2{font-size:21px;margin:36px 0 12px;}
+.legal-content h2:first-child{margin-top:0;}
+.legal-content p,
+.legal-content li{color:var(--mut);font-size:16px;line-height:1.7;}
+.legal-content p + p,
+.legal-content ul + p{margin-top:12px;}
+.legal-content ul{margin:10px 0 0 20px;}
+.legal-content li + li{margin-top:8px;}
 
 /* ---------- header ---------- */
 .site-header{
@@ -82,7 +93,11 @@ h3{font-size:21px;letter-spacing:-.01em;}
 .brand img{width:34px;height:34px;}
 .brand .brand-mark{width:34px;height:34px;flex:none;transition:transform .35s var(--ease);}
 .brand:hover .brand-mark{transform:rotate(-10deg) scale(1.07);}
-.brand .eye{transform-box:fill-box;transform-origin:center;}
+.brand .eye{
+  transform:translate(-137.26px,-142.09px) scaleY(1);
+  transform-box:fill-box;
+  transform-origin:center;
+}
 .brand .tld{color:var(--mut-2);font-weight:600;}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin-left:12px;}
 .nav-links > li{position:relative;}
@@ -250,6 +265,10 @@ a.card:hover,.card.hov:hover{transform:translateY(-4px);box-shadow:var(--shadow)
 .case-metrics{display:flex;gap:22px;margin-top:4px;}
 .case-metrics .metric b{font-size:23px;}
 .case-metrics .metric span{font-size:12.5px;}
+.solution-list > div{
+  transition:background .35s var(--ease),box-shadow .35s var(--ease);
+}
+.solution-list > div:first-child{background:var(--soft);}
 
 /* covers: abstract lobe compositions, one per case */
 .cover-a{background:linear-gradient(135deg,#173E1C,#1E5A26);}
@@ -304,6 +323,20 @@ a.card:hover,.card.hov:hover{transform:translateY(-4px);box-shadow:var(--shadow)
 .form.sent .form-ok{display:flex;}
 .form.sent .form-body{display:none;}
 .dark .form-ok{background:rgba(143,214,80,.14);color:#fff;}
+
+/* ---------- cookie notice ---------- */
+.cookie-notice{
+  position:fixed;left:24px;right:24px;bottom:24px;z-index:100;
+  max-width:860px;margin:0 auto;padding:18px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 18px 48px rgba(16,20,24,.16);
+  transition:opacity .2s var(--ease),transform .2s var(--ease);
+}
+.cookie-notice.hide{opacity:0;transform:translateY(12px);pointer-events:none;}
+.cookie-notice p{font-size:14.5px;line-height:1.55;color:var(--mut);max-width:68ch;}
+.cookie-notice a{color:var(--acc-deep);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+.cookie-actions{display:flex;flex:none;gap:10px;}
 
 /* ---------- footer ---------- */
 .site-footer{background:var(--ink);color:#A9B2BB;padding:64px 0 36px;font-size:15px;}
@@ -413,6 +446,8 @@ a.card:hover,.card.hov:hover{transform:translateY(-4px);box-shadow:var(--shadow)
   .nav-burger{display:flex;}
   .header-cta{display:none;}
   .case-metrics{flex-wrap:wrap;gap:14px;}
+  .cookie-notice{left:14px;right:14px;bottom:14px;flex-direction:column;align-items:stretch;padding:16px;}
+  .cookie-actions .btn{width:100%;}
 }
 
 /* ---------- motion pass ---------- */
@@ -436,8 +471,19 @@ a.case-card:hover .case-cover .tag{transform:translateY(-2px);}
 }
 
 @media (prefers-reduced-motion:no-preference){
+  .solution-list > div:first-child{background:transparent;}
+  .solution-list > div{animation:solutionPulse 7.2s infinite;}
+  .solution-list > div:nth-child(2){animation-delay:2.4s;}
+  .solution-list > div:nth-child(3){animation-delay:4.8s;}
+  @keyframes solutionPulse{
+    0%,27%,100%{background:transparent;box-shadow:inset 0 0 0 0 rgba(104,180,45,0);}
+    5%,22%{background:var(--soft);box-shadow:inset 4px 0 0 var(--acc);}
+  }
   .brand .eye{animation:blink 5.5s infinite;}
-  @keyframes blink{0%,92%,96%,100%{transform:scaleY(1);}94%{transform:scaleY(.06);}}
+  @keyframes blink{
+    0%,92%,96%,100%{transform:translate(-137.26px,-142.09px) scaleY(1);}
+    94%{transform:translate(-137.26px,-142.09px) scaleY(.06);}
+  }
   .ladder-arrow svg{animation:nudge 2.4s var(--ease) infinite;}
   @keyframes nudge{0%,100%{transform:translateX(0);opacity:.75;}50%{transform:translateX(7px);opacity:1;}}
   @media (max-width:1020px){.ladder-arrow svg{animation-name:nudgeY;}@keyframes nudgeY{0%,100%{transform:translateX(0);}50%{transform:translateX(7px);}}}
