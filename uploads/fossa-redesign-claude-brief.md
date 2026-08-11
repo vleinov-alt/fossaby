@@ -1,6 +1,6 @@
 # Fossa-IT Website Redesign — Instructions for Claude (Design Brief)
 
-> Paste this brief into Claude when generating the new fossa.by website. Build pages in the order listed. All visible content is in Russian (an EN toggle exists but RU is primary). Replace placeholder content marked `[TODO]` with real assets before launch.
+> Paste this brief into Claude when generating the new fossa.by website. Build pages in the order listed. All visible content is in Russian (an EN toggle exists but RU is primary). Replace placeholder content with real assets before launch.
 
 ## 1. Context
 
@@ -52,7 +52,7 @@ Navigation: logo → home; top nav = Услуги (dropdown: Автоматиз�
   - **Сайты и приложения** — websites, simple systems, client portals, bots; CTA «Подробнее» → /development
   - **FossaMed — система для медицинских центров** — 1 line of value, 3 bullet outcomes, CTA «Подробнее» → /fossamed
 - A short «ladder» strip under the cards: начните с малого (сайт или простое приложение) → вырастайте в автоматизацию → мы сопровождаем на каждом этапе.
-- Then: trust strip (years, projects, [TODO: client logos]), 3 featured case cards → /cases, short «О компании» block, contact CTA.
+- Then: trust strip (years, projects, client logos), 3 featured case cards → /cases, short «О компании» block, contact CTA.
 - No service detail on the homepage. Its only job is routing + trust.
 
 ### /automation
@@ -60,7 +60,7 @@ Funnel order: promise → proof → offer → conversion.
 1. Hero: H1 «Автоматизация заявок, сервисных и клиентских процессов», subhead about removing manual routine without heavyweight enterprise rollouts. Primary CTA «Заказать аудит процессов», secondary «Написать в Telegram».
 2. «Что автоматизируем» — 4–6 outcome cards (заявки и SLA, CRM/клиентские процессы, ITSM, кастомные workflow-приложения, поддержка).
 3. «Как мы работаем» — 4-step horizontal timeline: аудит → пилот (30–45 дней) → внедрение → поддержка.
-4. Proof: 3 case cards with metrics [TODO: real numbers] → /cases.
+4. Proof: 3 case cards with real metrics → /cases.
 5. FAQ accordion (sроки, стек, что входит в аудит, поддержка после запуска).
 6. Conversion block: form (имя, телефон, email, что хотите автоматизировать) + Telegram alternative.
 
@@ -77,8 +77,8 @@ Entry-level funnel, friendly to non-technical small-business owners:
 6. Conversion: short form (имя, контакт, что нужно сделать) + Telegram.
 
 ### /fossamed
-1. Hero: H1 «FossaMed — медицинская информационная система для частных клиник», subhead: онлайн-запись, ведение приёма, единая история пациента, данные в защищённой инфраструктуре в Беларуси. CTA «Получить демо». Hero visual: product screenshot in a laptop frame [TODO: real screenshot].
-2. Feature grid (4): Онлайн-запись, Ведение приёма (МКБ-10), История пациента, Документы и роли — each with a small UI screenshot [TODO].
+1. Hero: H1 «FossaMed — медицинская информационная система для частных клиник», subhead: онлайн-запись, ведение приёма, единая история пациента, данные в защищённой инфраструктуре в Беларуси. CTA «Получить демо». Hero visual: product screenshot in a laptop frame.
+2. Feature grid (4): Онлайн-запись, Ведение приёма (МКБ-10), История пациента, Документы и роли — each with a small UI screenshot.
 3. «Как проходит внедрение» — 30/60/90-day plan with what the clinic does vs what Fossa-IT does.
 4. Security teaser block (encryption, role access, audits, backups, RB hosting) → link to /fossamed/security.
 5. «Что входит в демо» — 3 bullets, removes uncertainty.
@@ -89,10 +89,10 @@ Entry-level funnel, friendly to non-technical small-business owners:
 Full page: hosting location and certification, encryption at rest/in transit, role-based access, backup policy, RB personal-data-law compliance, security audits. Sober, factual tone; no marketing fluff. This page closes the clinic's main objection.
 
 ### /cases and /cases/{slug}
-Hub: filterable card grid (отрасль). Detail template: client context → task → solution → stack → timeline → 2–3 result metrics [TODO] → quote → CTA to the matching funnel.
+Hub: filterable card grid (отрасль). Detail template: client context → task → solution → stack → timeline → 2–3 result metrics → quote → CTA to the matching funnel.
 
 ### /contacts
-RU-language everything (no «Contacts»/«Submit» strings). Phones BY + RU, email, Telegram, form, requisites, [TODO: map/address if public].
+RU-language everything (no «Contacts»/«Submit» strings). Phones BY + RU, email, Telegram, form, requisites, map/address if public.
 
 ## 5. Forms & analytics (must be wired in)
 
