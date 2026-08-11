@@ -144,6 +144,16 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var valid = true;
+      var submit = form.querySelector('button[type="submit"]');
+      var error = form.querySelector('.form-error-msg');
+      if (!error) {
+        error = document.createElement('p');
+        error.className = 'form-error-msg';
+        error.setAttribute('role', 'alert');
+        var body = form.querySelector('.form-body') || form;
+        body.appendChild(error);
+      }
+      error.textContent = '';
       form.querySelectorAll('.field').forEach(function (f) {
         var input = f.querySelector('input,textarea,select');
         if (!input) return;
@@ -159,8 +169,36 @@
         if (firstBad) firstBad.focus();
         return;
       }
-      form.classList.add('sent');
-      window.fossaGoal(form.dataset.goal || 'form_submit');
+      var data = new FormData(form);
+      data.append('_goal', form.dataset.goal || 'form_submit');
+      data.append('_page', document.title || location.pathname);
+      form.classList.add('sending');
+      if (submit) submit.disabled = true;
+
+      fetch('send_mail.php', {
+        method: 'POST',
+        body: data,
+        credentials: 'same-origin'
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (payload) {
+            if (!res.ok || payload.status !== 'ok') {
+              throw new Error(payload.message || 'Не удалось отправить заявку');
+            }
+            return payload;
+          });
+        })
+        .then(function () {
+          form.classList.add('sent');
+          window.fossaGoal(form.dataset.goal || 'form_submit');
+        })
+        .catch(function (err) {
+          error.textContent = err.message || 'Не удалось отправить заявку. Напишите нам в Telegram или на email.';
+        })
+        .finally(function () {
+          form.classList.remove('sending');
+          if (submit) submit.disabled = false;
+        });
     });
     form.querySelectorAll('input,textarea').forEach(function (inp) {
       inp.addEventListener('input', function () {

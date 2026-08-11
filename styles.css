@@ -315,6 +315,9 @@ a.card:hover,.card.hov:hover{transform:translateY(-4px);box-shadow:var(--shadow)
 .form-foot{font-size:13px;color:var(--mut-2);line-height:1.5;}
 .dark .form-foot{color:#7E8893;}
 .form-foot a{text-decoration:underline;}
+.form.sending button[type="submit"]{opacity:.7;pointer-events:none;}
+.form-error-msg{display:block;font-size:13px;color:#D14040;line-height:1.45;}
+.dark .form-error-msg{color:#FF9A9A;}
 .form-ok{
   display:none;flex-direction:column;gap:10px;align-items:flex-start;
   background:var(--acc-soft);border-radius:14px;padding:24px;color:var(--ink);
