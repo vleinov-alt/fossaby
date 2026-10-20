@@ -124,12 +124,14 @@
     rvEls.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- analytics goal stub (Yandex.Metrika placeholder) ----------
-     Replace METRIKA_ID and uncomment the loader snippet before launch.   */
-  window.fossaGoal = function (goal) {
-    if (window.ym && window.METRIKA_ID) window.ym(window.METRIKA_ID, 'reachGoal', goal);
-    // console.info('[goal]', goal);
-  };
+ /* ---------- Yandex.Metrika goals ---------- */
+    window.METRIKA_ID = 102434253;
+    
+    window.fossaGoal = function (goal) {
+      if (typeof window.ym === 'function') {
+        window.ym(window.METRIKA_ID, 'reachGoal', goal);
+      }
+    };
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a');
     if (!a) return;
